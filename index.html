@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy Birthday Simran 🎉</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<section class="hero">
+  <div class="card">
+    <img src="girl-cartoon.jpg" alt="Birthday Girl">
+  </div>
+
+  <div class="text">
+    <h1>Best Wishes,<br><span id="name">Simran</span></h1>
+    <h2>Happy <span id="age">18</span>th Birthday! 🎉</h2>
+    <p class="wish-line">
+    Wishing you a day full of joy, celebrations, and magical moments
+    </p>
+    <p id="message"></p>
+  </div>
+</section>
+
+<section class="wish">
+  <h1>Make a Wish</h1>
+  <p>Blow out the candles and make your birthday wish come true</p>
+
+<div class="cake">
+  <div class="candles">
+    <span></span><span></span><span></span>
+    <span></span><span></span><span></span>
+  </div>
+
+  
+  <div class="layer top"></div>
+  <div class="layer middle"></div>
+  <div class="layer bottom"></div>
+
+</div>
+
+  <div class="blow-text" id="blowText">Blowing…</div>
+  <button id="wishBtn">💨 Blow the Candles</button>
+
+</section>
+
+<footer>
+  <div class="footer-text">
+    <strong>Made with ❤️ for Simran</strong>
+   <span>1 February | Happy 18th Birthday 🎂</span>
+  </div>
+</footer>
+
+<audio id="music" loop>
+  <source src="birthday.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" onclick="toggleMusic()">🔊</button>
+
+<div id="startOverlay"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
