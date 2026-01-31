@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(120deg,#fff7f3,#ffeef7);
+  text-align: center;
+  color: #333;
+}
+
+.intro-text {
+  text-align: left;
+  margin-left: 10px; /* ya 16px */
+}
+
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px;
+  gap: 60px;
+}
+
+.card {
+  background: #fff;
+  padding: 10px;
+  border-radius: 25px;
+  box-shadow: 0 30px 60px rgba(0,0,0,.1);
+}
+
+.card img {
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
+}
+    
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* ✅ yahi main fix */
+  text-align: left;        /* ✅ */
+}
+
+.text h1 {
+  font-size: 50px;
+}
+
+.text span {
+  color: #f472b6;
+}
+
+.text h2 {
+  margin-top: 20px;
+  color: #f472b6;
+}
+
+.text p {
+  margin-top: 10px;
+  max-width: 400px;
+}
+
+.wish {
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;   /* ← yahi se niche aayega cake */
+}
+
+
+.cake {
+  position: relative;
+  width: 260px;
+  margin: 60px auto;
+}
+
+/* layers */
+.layer {
+  width: 100%;
+  border-radius: 30px;
+  position: relative;
+}
+
+.top {
+  height: 55px;
+  background: linear-gradient(#ffe27a, #ffd24d);
+  z-index: 3;
+}
+
+.middle {
+  height: 70px;
+  background: linear-gradient(#ff9acb, #ff6fae);
+  margin-top: -12px;
+  z-index: 2;
+}
+
+.bottom {
+  height: 95px;
+  background: linear-gradient(#ffd86b, #ffb703);
+  margin-top: -14px;
+  z-index: 1;
+}
+
+/* shadow */
+.cake::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 28px;
+  background: rgba(0,0,0,0.18);
+  filter: blur(22px);
+}
+
+/* candles */
+.candles {
+  position: absolute;
+  top: -65px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 18px;          /* spacing between candles */
+  z-index: 5;
+}
+
+.candles span {
+  width: 12px;        /* mota */
+  height: 55px;       /* lamba */
+  background: linear-gradient(#fff3b0, #ffd24d);
+  border-radius: 6px;
+  position: relative;
+}
+
+/* flame */
+.candles span::before {
+  content: "🔥";
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+}
+
+/* blow hone ke baad */
+.off::before {
+  content: "💨";
+  font-size: 18px;
+  top: -22px;
+}
+
+
+.blow-text {
+  font-size: 26px;
+  font-weight: 600;
+  color: #f472b6;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: glow 1.2s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 6px #f9a8d4;
+  }
+  to {
+    text-shadow: 0 0 18px #f472b6;
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #f9a8d4;
+  }
+  to {
+    text-shadow: 0 0 20px #f472b6;
+  }
+}
+
+
+
+.off::before {
+  display: none;
+}
+
+
+@keyframes flicker {
+  from {opacity:.6;}
+  to {opacity:1;}
+}
+
+button {
+  background:#f472b6;
+  color:white;
+  padding:16px 40px;
+  border:none;
+  border-radius:40px;
+  font-size:18px;
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(244,114,182,.4);
+}
+
+footer {
+  margin:60px 0;
+  color:#666;
+}
+
+.music-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+
+  width: 60px;
+  height: 60px;
+
+  border-radius: 50%;              /* 🔴 proper circle */
+  background: #f472b6;
+  color: #fff;
+
+  font-size: 22px;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 15px 30px rgba(244,114,182,.45);
+  transition: transform .2s ease;
+}
+
+.music-btn:hover {
+  transform: scale(1.08);
+}
+
+
+.footer-text {
+  margin-top: 25px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;          /* 👈 yahi line gap create karegi */
+  font-size: 14px;
+  color: #000;
+}
+
+.footer-text strong {
+  font-size: 15px;
+  font-weight: 700;  /* bold */
+}
+
+#startOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+}
